@@ -1,3 +1,16 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="valor">
+      {{valor}}
+    </ion-label>
+  </ion-item>
+  <div *ngFor="let grupodenumero of grupodenumeros">
+    <ion-button *ngFor="let n of grupodenumero" (click)="onButtonPress(n)" class="calc-botao"> {{n}} </ion-button>
+  </div>
+</ion-content>
